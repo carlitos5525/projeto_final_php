@@ -20,11 +20,16 @@
 
         if($result)
         {
-            echo "Deu boa";
+            //iniciando a sessão
+            session_start();
+            $_SESSION['usuario'] = $usuario;
+            $_SESSION['senha'] = $senha;
+
+            header('location:sistema/index.php');
         }
         else
         {
-            echo "Deu ruim";
+            header('location:index.php?msg=usuario_invalido');
         }
 
 
