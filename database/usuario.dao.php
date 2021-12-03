@@ -21,9 +21,7 @@ function buscar_usuario($usuario, $senha)
     {
         return false;
     }
-
-    
-
 }
+
 
 ?>
