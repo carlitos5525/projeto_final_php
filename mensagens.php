@@ -21,7 +21,7 @@ function validar_msg($msg)
 			break;
 
 		case 'cadastrado':
-			$retorno = '<h3 class="alert alert-success">Livro cadastrado com sucesso!</h3>';
+			$retorno = '<h3 class="alert alert-success">Curso cadastrado com sucesso!</h3>';
 			break;
 
 		case 'errocadastro':

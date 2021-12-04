@@ -47,7 +47,7 @@ function exibir_cursos()
     }
     else
     {
-        $retorno = '<div class="col-6">';
+        $retorno = '<div class="col-9">';
 		$retorno .= '<table class="table table-hover">';
 		// montar a primeira linha da tablea
 		$retorno .= '<tr>';
@@ -82,7 +82,7 @@ function exibir_cursos()
 function link_deletar($id_curso)
 {
     $link = '<a href="deletar.php?id_curso='.$id_curso.'" 
-    onclick="return confirm(\'Tem certeza que deseja excluir esse livro?\')">Deletar<a/>';
+    onclick="return confirm(\'Tem certeza que deseja excluir esse livro?\')" class="btn btn-danger" >Deletar<a/>';
 
     return $link;
     

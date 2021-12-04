@@ -12,11 +12,7 @@
 </head>
 <body>
 
-    <h1>Cadastro de Cursos - Área Restrita</h1>
-
-    <p>
-        <a href="logout.php">Sair do Sistema<a>
-    <p>
+    <?php include_once 'menu.php'?>
 
     <?php  
 
@@ -26,38 +22,54 @@
 		echo validar_msg($_GET['msg']);
 	}
 	?>
-
-    <h3>Utilize o form abaixo para cadastrar<h3>
-
-    <form action="cadastrar.php" method="post">
-        <p>
-            <label for="nome_curso">Nome do Curso</label>
-            <input type="text" name="nome_curso" id="">
-        </p>
-
-        <p>
-            <label for="anos_duracao">Anos de duração</label>
-            <input type="number" name="anos_duracao" max="10" min="1" id="">
-        </p>
-
-        <p>
-            <label for="area_atuacao">Área de atuação</label>
-            <input type="text" name="area_atuacao" id="">
-        </p>
-
-        <p>
-            <button type="submit" name="salvar">Salvar</button>
-
-        </p>
-
-    </form>
-
-    <h2>Livros Cadastrado<h2>
+    <div class="container">
+                <form action="cadastrar.php" method="post">
+                <div class="form-group">
+                    <div class="   col-md-6 offset-md-3">
+                    <label for="nome_curso">Nome do Curso</label>
+                    <input type="text" name="nome_curso" class="form-control" id="exampleInputEmail1" placeholder="Digite o nome do curso">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="   col-md-2 offset-md-3">
+                    <label for="anos_duracao">Anos de duração do curso</label>
+                    <input type="number" name="anos_duracao" max="10" min="1" class="form-control" id="exampleInputPassword1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="   col-md-6 offset-md-3">
+                    <label for="area_atuacao">Área de atuação</label>
+                    <select class="form-select" name="area_atuacao" id="exampleFormControlSelect1">
+                    <option selected>Selecione a área de atuação</option>
+                    <option>Humanas</option>
+                    <option>Exatas</option>
+                    <option>Biológicas</option>
+                    </select>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <div class="col-md-6 offset-md-3">
+                        <button type="submit" name="salvar" class="btn btn-primary">Cadastrar</button>
+                    </div>
+                </div>
+                </form>
+    </div>
     
-    <?php
-        echo exibir_cursos();
-    ?>
-
+    <div class="container">
+        <br>
+        <div class="   col-md-8 offset-md-3">
+            <h2>Livros Cadastrados<h2>
+        </div>
+        <br>
+        <div class="   col-md-8 offset-md-3">
+            <?php
+                echo exibir_cursos();
+            ?>
+        </div>
+        
+    </div>
+    
     
 </body>
 </html>

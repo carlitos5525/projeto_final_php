@@ -33,40 +33,49 @@ else
 </head>
 <body class="container-fluid">
 
-	<h1>Editar Curso</h1>
+	<?php include_once 'menu.php' ?>
 
-	<p>
-		<a href="index.php" class="btn btn-primary btn-sm">Cancelar Edição</a>
-	</p>
-
-	<h3>Editar Dados do Curso:</h3>
-
-	<div class="col-5">
-		<form action="editado.php" method="post">
-			
-			<p>
-				<label class="form-label">Nome do Curso</label><br>
-				<input type="text" name="nome_curso" required value="<?= $curso['nome_curso'] ?>" class="form-control">
-			</p>
-
-			<p>
-				<label class="form-label">Anos de duração</label><br>
-				<input type="number" name="anos_duracao" required value="<?= $curso['anos_duracao'] ?>" class="form-control">
-			</p>
-
-			<p>
-				<label class="form-label">Área de atuação</label><br>
-				<input type="text" name="area_atuacao" required value="<?= $curso['area_atuacao'] ?>" class="form-control">
-			</p>
-
-			<p>
-				<button type="submit" name="salvar" class="btn btn-outline-primary">Salvar Alterações</button>
-			</p>
-
-			<input type="hidden" name="id_curso" value="<?= $curso['id_curso'] ?>">
-
-		</form>
+	<br>
+	<div class="container">
+		<div class="   col-md-6 offset-md-3">
+			<h3>Editar Dados do Curso:</h3>
 	</div>
+		<form action="editado.php" method="post">
+		<div class="form-group">
+			<div class="   col-md-6 offset-md-3">
+			<label for="nome_curso">Nome do Curso</label>
+			<input type="text" name="nome_curso" required value="<?= $curso['nome_curso'] ?>" class="form-control" id="exampleInputEmail1" placeholder="Digite o nome do curso">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="   col-md-6 offset-md-3">
+			<label for="anos_duracao">Anos de duração do curso</label>
+			<input type="number" name="anos_duracao" required value="<?= $curso['anos_duracao'] ?>" max="10" min="1" class="form-control" id="exampleInputPassword1">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="   col-md-6 offset-md-3">
+			<label for="area_atuacao">Selecione a área de atuação</label>
+			<select class="form-select" required value="<?= $curso['area_atuacao'] ?>" name="area_atuacao" id="exampleFormControlSelect1">
+			<option selected required value="<?= $curso['area_atuacao'] ?>"></option>
+			<option>Humanas</option>
+			<option>Exatas</option>
+			<option>Biológicas</option>
+			</select>
+			</div>
+		</div>
+		<br>
+		<div class="form-group">
+			<div class="col-md-6 offset-md-3">
+				<button type="submit" name="salvar" class="btn btn-primary">Salvar</button>
+				<a href="index.php" class="btn btn-danger btn-sm">Cancelar Edição</a>
+			</div>
+		</div>
+
+		<input type="hidden" name="id_curso" value="<?= $curso['id_curso'] ?>">
+		</form>
+
+    </div>
 
 </body>
 </html>
