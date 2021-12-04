@@ -55,8 +55,8 @@ function exibir_cursos()
 		$retorno .= '<th>Nome do curso</th>';
 		$retorno .= '<th>Anos de Duração</th>';
 		$retorno .= '<th>Área de atuação</th>';
-		$retorno .= '<th>Deletar</th>';
-		$retorno .= '<th>Editar</th>';
+		$retorno .= '<th></th>';
+		$retorno .= '<th></th>';
 		$retorno .= '</tr>';
 
         while($curso = mysqli_fetch_assoc($result))
