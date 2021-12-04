@@ -68,7 +68,7 @@ function exibir_cursos()
 			$retorno .= "<td>" . $curso['anos_duracao']    . "</td>";
 			$retorno .= "<td>" . $curso['area_atuacao']  . "</td>";
 			$retorno .= "<td>" . link_deletar($curso['id_curso']) . "</td>";
-			//$retorno .= "<td>" . link_editar($curso['id_curso'])  . "</td>";
+			$retorno .= "<td>" . link_editar($curso['id_curso'])  . "</td>";
 			$retorno .= '</tr>'; // fim da linha da tabela
         }
 
@@ -104,4 +104,44 @@ function deletar_curso($id_curso)
 	return false;
 }
 
+
+function link_editar($id_curso)
+{
+    $link = '<a href="editar.php?id_curso='.$id_curso.'" class="btn btn-warning">Editar</a>';
+	return $link;
+}
+
+
+function buscar_curso($id_curso)
+{
+	$conn = conectar();
+
+	$sql = "SELECT * FROM cursos_tb WHERE id_curso = $id_curso";
+
+	$result = mysqli_query($conn, $sql);
+
+	if (mysqli_affected_rows($conn) > 0)
+	{
+		return $result;
+	}
+
+	return null;
+}
+
+function editar_curso($id_curso, $nome_curso, $anos_duracao, $area_atuacao)
+{
+	$conn = conectar();
+
+	$sql = "UPDATE cursos_tb SET nome_curso = '$nome_curso', anos_duracao = $anos_duracao, area_atuacao = '$area_atuacao' 
+	WHERE id_curso = $id_curso";
+
+	$result = mysqli_query($conn, $sql);
+
+	if (mysqli_affected_rows($conn) > 0)
+	{
+		return true;
+	}
+
+	return false;
+}
 ?>
